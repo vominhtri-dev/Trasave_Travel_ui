@@ -1,0 +1,44 @@
+@use 'abstacts' as *;
+@use 'components/header';
+@use 'components/button';
+@use 'components/banner';
+@use 'components/whysection';
+@use 'components/reasonsection';
+@use 'components/savesection';
+@use 'components/footer';
+
+body {
+	font-family: $primary-font;
+	color: $text-color;
+	background: $background;
+	line-height: 1;
+}
+
+a {
+	text-decoration: none;
+	color: $text-color;
+	transition: $trans;
+	&:hover {
+		color: $primary-color;
+	}
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+ul {
+	padding: 0;
+}
+
+.wrapper {
+	max-width: 1512px;
+	margin: 0 auto;
+}
+
+.container {
+	max-width: 1325px;
+	margin: 0 auto;
+}

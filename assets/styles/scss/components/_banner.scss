@@ -1,0 +1,66 @@
+@use '../abstacts' as *;
+
+.banner {
+	position: relative;
+	& > .container {
+		& > .banner__text {
+			& > h1 {
+				font-weight: 900;
+				width: 705px;
+				height: 222px;
+				font-size: 54px;
+				line-height: 74px;
+				letter-spacing: 0.04em;
+			}
+
+			& > p {
+				width: 540px;
+				height: 99px;
+				font-weight: 700;
+				font-size: 24px;
+				line-height: 33px;
+			}
+
+			& > span {
+				color: $primary-color;
+			}
+
+			& > .btn {
+				margin-bottom: 21px;
+			}
+		}
+
+		& > .banner__image {
+			position: absolute;
+			width: 792.35px;
+			height: 852.16px;
+			left: 630px;
+			top: -48px;
+		}
+	}
+}
+
+.banner__image--flex {
+	display: flex;
+	align-items: center;
+
+	& > .banner__image--left {
+		width: 184px;
+		height: 155px;
+		margin-right: 113px;
+	}
+	& > .banner__image--right {
+		width: 248px;
+		height: 208px;
+	}
+}
+
+.banner__clippath {
+	position: absolute;
+	width: 1012.62px;
+	height: 995.4px;
+	left: 0px;
+	top: 0px;
+	filter: blur(50px);
+	z-index: -1;
+}

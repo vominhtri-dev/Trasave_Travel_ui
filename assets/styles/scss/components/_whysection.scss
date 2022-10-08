@@ -1,0 +1,56 @@
+@use '../abstacts' as *;
+
+.whySection {
+	margin-top: 130px;
+
+	& > .container {
+		& > .whySection__heading {
+			font-weight: 900;
+			font-size: 64px;
+			line-height: 87px;
+			text-align: center;
+			margin: 28px 0;
+			span {
+				color: $primary-color;
+			}
+		}
+
+		& > p {
+			font-weight: 600;
+			font-size: 24px;
+			line-height: 33px;
+			text-align: center;
+		}
+	}
+
+	.whySection__cards {
+		margin-top: 130px;
+		display: flex;
+		justify-content: space-around;
+
+		& > .whySection__cardItem {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-weight: 600;
+
+			& > .card__img {
+				width: 100px;
+				height: 100px;
+			}
+
+			& > .card__heading {
+				font-size: 36px;
+				line-height: 49px;
+				margin: 9px 0;
+			}
+
+			& > p {
+				font-size: 24px;
+				line-height: 33px;
+				margin: 0;
+				width: 271px;
+			}
+		}
+	}
+}

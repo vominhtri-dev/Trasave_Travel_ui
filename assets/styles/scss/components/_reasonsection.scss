@@ -1,0 +1,74 @@
+@use '../abstacts' as *;
+
+.reasonSection {
+	height: 628px;
+	margin-top: 130px;
+	margin-bottom: 200px;
+	position: relative;
+
+	.container {
+		& > .reasonSection__text {
+			position: absolute;
+			bottom: 0;
+
+			& > .reasonSection__heading {
+				width: 532px;
+				font-weight: 700;
+				font-size: 56px;
+				line-height: 76px;
+				margin: 26px 0;
+				position: relative;
+
+				&::before {
+					content: '';
+					width: 147px;
+					height: 7px;
+					position: absolute;
+					left: 0;
+					top: -26px;
+					background-color: $primary-color;
+				}
+			}
+
+			& > p {
+				font-weight: 600;
+				font-size: 24px;
+				line-height: 33px;
+				width: 601px;
+				margin: 0;
+			}
+		}
+
+		& > .reasonSection__image {
+			width: 608.27px;
+			height: 628px;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
+		& > .reasonSection__text.reverse {
+			position: absolute;
+			text-align: right;
+			right: 0;
+			& > .reasonSection__heading {
+				float: right;
+				&::before {
+					left: auto;
+					right: 0;
+				}
+			}
+
+			& > p {
+				clear: right;
+			}
+		}
+
+		& > .reasonSection__image.reverse {
+			bottom: 0;
+			left: 0;
+			width: 673px;
+			height: 621px;
+		}
+	}
+}

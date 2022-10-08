@@ -1,0 +1,37 @@
+@use '../abstacts' as *;
+
+.header .container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 107px;
+	margin-top: 18px;
+}
+
+.header__logo {
+	width: 107px;
+	height: 107px;
+}
+
+.header__nav {
+	display: flex;
+	justify-content: space-between;
+	width: 714px;
+	font-size: 22px;
+
+	& > .nav__link {
+		list-style: none;
+		height: 48px;
+		line-height: 48px;
+		font-weight: 600;
+	}
+
+	& > .nav__link.active > a {
+		color: $primary-color;
+	}
+
+	& > .btn {
+		font-weight: 700;
+	}
+}
