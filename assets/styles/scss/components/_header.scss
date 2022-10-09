@@ -7,6 +7,14 @@
 	align-items: center;
 	height: 107px;
 	margin-top: 18px;
+	position: relative;
+
+	.btn--menu {
+		display: none;
+		&::selection {
+			background: #000;
+		}
+	}
 }
 
 .header__logo {
@@ -19,6 +27,7 @@
 	justify-content: space-between;
 	width: 714px;
 	font-size: 22px;
+	user-select: none;
 
 	& > .nav__link {
 		list-style: none;
@@ -33,5 +42,63 @@
 
 	& > .btn {
 		font-weight: 700;
+	}
+}
+
+@include maxW($lg) {
+	.header__nav {
+		width: 604px;
+	}
+}
+
+@include maxW($md) {
+	.header .container {
+		.header__logo {
+			position: absolute;
+			left: 0;
+		}
+		.btn--menu {
+			display: block;
+			position: absolute;
+			right: 10px;
+		}
+	}
+
+	.header__nav {
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-50px);
+		max-width: $xs;
+		position: absolute;
+		flex-direction: column;
+		background-color: darken($primary-color, 35%);
+		right: 10px;
+		top: 77px;
+		border-radius: 10px;
+		padding: 1em;
+		z-index: 3;
+		transition: all 0.3s;
+
+		& > .btn {
+			max-width: 100%;
+		}
+	}
+
+	.header__nav.show {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+}
+
+@include maxW($sm) {
+	.header__nav {
+		width: 400px;
+	}
+}
+
+@include maxW($xs) {
+	.header__nav {
+		width: 300px;
 	}
 }

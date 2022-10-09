@@ -33,12 +33,37 @@ ul {
 	padding: 0;
 }
 
-.wrapper {
-	max-width: 1512px;
-	margin: 0 auto;
-}
-
 .container {
 	max-width: 1325px;
 	margin: 0 auto;
+}
+
+@include maxW($xl) {
+	.container {
+		max-width: $lg;
+	}
+}
+
+@include maxW($lg) {
+	.container {
+		max-width: $md;
+	}
+}
+
+@include maxW($md) {
+	.container {
+		max-width: $sm;
+	}
+}
+
+@include maxW($sm) {
+	.container {
+		max-width: $xs;
+	}
+}
+
+@include maxW($xs) {
+	.container {
+		max-width: 400px;
+	}
 }

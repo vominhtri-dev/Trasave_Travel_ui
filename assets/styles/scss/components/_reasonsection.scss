@@ -10,6 +10,7 @@
 		& > .reasonSection__text {
 			position: absolute;
 			bottom: 0;
+			left: 0;
 
 			& > .reasonSection__heading {
 				width: 532px;
@@ -34,7 +35,7 @@
 				font-weight: 600;
 				font-size: 24px;
 				line-height: 33px;
-				width: 601px;
+				max-width: 601px;
 				margin: 0;
 			}
 		}
@@ -44,15 +45,17 @@
 			height: 628px;
 			position: absolute;
 			right: 0;
+			z-index: -1;
 			top: 0;
 		}
 
 		& > .reasonSection__text.reverse {
 			position: absolute;
-			text-align: right;
+			left: auto;
 			right: 0;
 			& > .reasonSection__heading {
-				float: right;
+				width: fit-content;
+				max-width: 532px;
 				&::before {
 					left: auto;
 					right: 0;
@@ -60,7 +63,9 @@
 			}
 
 			& > p {
-				clear: right;
+				max-width: 532px;
+				display: block;
+				text-align: right;
 			}
 		}
 
@@ -69,6 +74,39 @@
 			left: 0;
 			width: 673px;
 			height: 621px;
+		}
+	}
+}
+
+@include maxW($lg) {
+	.reasonSection__image {
+		filter: brightness(50%);
+	}
+	.reasonSection {
+		.container {
+			.reasonSection__image.reverse {
+				width: auto;
+			}
+			& > p {
+				width: fit-content;
+			}
+		}
+	}
+}
+
+@include maxW($md) {
+	.reasonSection > .container {
+		& > .reasonSection__text {
+			& > .reasonSection__heading,
+			& > p {
+				width: calc(100% - 48px);
+			}
+		}
+
+		& > .reasonSection__text.reverse {
+			& > p {
+				width: auto;
+			}
 		}
 	}
 }

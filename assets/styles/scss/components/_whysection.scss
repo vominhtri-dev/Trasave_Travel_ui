@@ -50,6 +50,18 @@
 				line-height: 33px;
 				margin: 0;
 				width: 271px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+@include maxW($lg) {
+	.whySection {
+		.whySection__cards {
+			flex-wrap: wrap;
+			& > .whySection__cardItem {
+				padding: 20px 0;
 			}
 		}
 	}

@@ -5,7 +5,6 @@
 	position: relative;
 	display: flex;
 	justify-content: space-between;
-
 	& > .footer__background {
 		position: absolute;
 		width: 100%;
@@ -38,6 +37,7 @@
 	& > .footer__nav {
 		display: inline-block;
 		margin-top: 71px;
+		padding: 0 32px;
 
 		& > p {
 			font-weight: 800;
@@ -61,6 +61,8 @@
 
 	& > .footer__subcriber {
 		margin-top: 73px;
+		position: relative;
+
 		& > p {
 			font-weight: 800;
 			font-size: 28px;
@@ -71,31 +73,50 @@
 			}
 		}
 
-		& > .input__subscribe {
-			font-family: inherit;
-			padding: 0 12px;
-			font-size: 18px;
-			border-radius: 8px;
-			width: 408px;
-			height: 59px;
-			position: absolute;
-			right: 0;
-		}
+		& > .input__wrapper {
+			position: relative;
 
-		& > .btn {
-			position: absolute;
-			right: 20px;
-			top: 182px;
-		}
+			& > .input__subscribe {
+				font-family: inherit;
+				padding: 0 12px;
+				font-size: 18px;
+				border-radius: 8px;
+				min-width: 300px;
+				height: 59px;
+			}
 
-		& > .footer__copyright {
-			position: absolute;
-			bottom: 24px;
-			left: 50%;
-			transform: translateX(-50%);
-			font-weight: 700;
-			font-size: 20px;
-			line-height: 27px;
+			& > .btn {
+				position: absolute;
+				bottom: 12px;
+				right: 12px;
+			}
+		}
+	}
+}
+
+@include maxW($xl) {
+	.footer {
+		height: auto;
+		flex-wrap: wrap;
+		& > .footer__subcriber {
+			height: 200px;
+			margin-top: 0;
+			margin-left: 32px;
+			& > .input__wrapper {
+				& > .input__subscribe {
+					right: auto;
+					left: 0;
+				}
+			}
+		}
+	}
+}
+
+@include maxW($xs) {
+	.footer {
+		& > .footer__nav {
+			padding: 0;
+			padding-left: 32px;
 		}
 	}
 }
